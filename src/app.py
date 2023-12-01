@@ -1,3 +1,4 @@
+from pathlib import Path
 import streamlit as st
 from nltk.corpus import words
 
@@ -8,8 +9,10 @@ from password_generators import (
     PinCodeGenerator,
 )
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 # Title of the application
-st.image("../images/banner.jpeg")
+st.image(str(BASE_DIR / "images/banner.jpeg"))
 st.title(":zap: Password Generator")
 
 col1, col2 = st.columns(2)
